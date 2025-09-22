@@ -2,9 +2,7 @@
 
 AI-Powered Learning Companion - Transform any question into an engaging video tutorial instantly!
 
-[![Download on Google Play](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.yeetechnologies.tutorcraft)
-[![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)](https://flutter.dev)
-[![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)](https://firebase.google.com)
+[![Download on Google Play](https://play.google.com/store/apps/details?id=com.yeefm.tutorcraft)
 
 ## 📱 Download
 
