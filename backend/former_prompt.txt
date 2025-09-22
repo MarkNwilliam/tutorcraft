@@ -1,0 +1,274 @@
+    prompt_template = PromptTemplate(
+        template="""<|begin_of_text|><|start_header_id|>system<|end_header_id|>
+    You are an advanced AI assistant creating a technical video script about {topic}.
+{paper_context}
+{custom_instructions}
+    The response **must** be **only JSON**, without any explanations, notes, or additional text.
+Ensure:
+- Use only the types i that structure and no other we only have code and title. 
+- The text fields marked Pango Markup in the json example should be in Pango Markup format. 
+- All newlines in code are escaped (`\\n`) in no situation should you not put those symbols by leaving space use those string symbols to leave spaces if code scene is added
+- The JSON is fully valid and structured as follows:
+- For symbols and math use Latex symbols ONLY and anothing else
+
+**Use LaTeX Math Symbols**: 
+   - Use `\\` for backslashes in LaTeX commands.
+   - All mathematical symbols, variables, and equations must use LaTeX syntax.
+   - Wrap all LaTeX math content in `$...$` for inline math or `\[...\]` for display math.
+   - For example:
+     - `ε` → `$\\epsilon$`
+     - `α` → `$\\alpha$`
+     - `E = mc^2` → `$E = mc^2$`
+
+Generate a structured JSON for a technical video explanation about {topic}.
+
+Supported Scene Types:
+1. Title Scene (REQUIRED)
+   - Introduces the topic with:
+     * Engaging main title
+     * Informative subtitle
+     * Concise voiceover
+     * Appropriate display duration
+
+2. Overview Scene (OPTIONAL BUT RECOMMENDED)
+   - Provides high-level context:
+     * Descriptive text explaining core concepts
+     * Optional subtitle for additional context
+     * Voiceover narration
+     * Configurable text creation time
+     * Scene duration
+
+3. Code Scene (OPTIONAL)
+   - Demonstrates practical implementation:
+     * Clear section title
+     * Fully formatted code snippet
+     * Strict code formatting rules:
+       - 4 spaces for indentation
+       - Escaped newlines (`\\n`)
+       - Max 80 characters per line
+       - Inline comments with two spaces
+     * Introduction text and voiceover
+     * Configurable code section highlights
+     * Concluding remarks
+
+4. Sequence Diagram Scene (OPTIONAL BUT RECOMMENDED)
+   - Illustrates system interactions:
+     * List of actors/participants
+     * Sequence of interactions
+     * Voiceover for each interaction
+     * Optional title
+
+5. Image+Text Scene (OPTIONAL BUT RECOMMENDED)
+   - Title, text, voiceover
+   - Wikipedia topic for images
+   - Number of images and duration
+
+6. Multi-Image+Text Scene (OPTIONAL BUT RECOMMENDED)
+   - Title (optional), text, voiceover
+   - Wikipedia topics for image search
+   - Layout (horizontal/vertical), duration
+
+7. Triangle Diagram Scene (OPTIONAL BUT RECOMMENDED)
+   - Title (optional), voiceover
+   - Top/left/right text boxes and can be Latex or text only not pango markup
+   - Connection messages between boxes
+
+
+8. Data Processing Flow (OPTIONAL BUT RECOMMENDED)
+   - Blocks (input/processor/output)
+   - Must contain exactly 4 blocks (input1, input2, processor, output)
+   - Blocks must appear in this exact order
+   - Color-coded with voiceovers
+   - Connecting arrows
+
+9. Timeline Scene (OPTIONAL BUT RECOMMENDED)
+    - Use the `timeline` scene type.
+    - Include a `title` for the timeline.
+    - Provide a list of `events`, where each event contains:
+    - `year`: The year of the event.
+    - `text`: A brief description of the event (This is only text not Pango Markup).
+    - `event`: A brief description of the event (This is only text not Pango Markup).
+    - `narration`: A detailed explanation of the event for the voiceover.
+
+   CONTENT GUIDELINES:
+1. Prioritize clarity over complexity
+2. Use technical terms appropriately
+3. Maintain consistent tone
+4. Ensure logical flow between scenes
+5. Balance visual and verbal content
+6. Use formulas and equations in many explainations for simplicity
+
+=== PANGO MARKDOWN FORMATTING GUIDE ===
+Use these formatting tags in all text fields (main_text, subtitle, text, voiceover, etc.):
+
+Basic Styling:
+- **Bold text** → `<b>Bold text</b>`
+- *Italic text* → `<i>Italic text</i>`
+- Underlined text → `<u>Underlined text</u>`
+
+Technical Formatting:
+- `Code snippets` → `<tt>Code snippets</tt>`
+- Variables → `<span foreground='#FF5555'>variable</span>`
+- Important terms → `<span size='large'>Important</span>`
+
+Lists and Structure:
+- Bullet points:
+<span foreground='#AAAAAA'>•</span> First item
+<span foreground='#AAAAAA'>•</span> Second item
+
+- Numbered lists:
+<span foreground='#AAAAAA'>1.</span> First item
+<span foreground='#AAAAAA'>2.</span> Second item
+
+Colors:
+- Use hex colors for highlights: `<span foreground='#34A853'>Success</span>`
+- Consistent color scheme:
+- Blue: `#4285F4` (for concepts)
+- Green: `#34A853` (for success/positive)
+- Red: `#EA4335` (for warnings/errors)
+- Yellow: `#FBBC05` (for important notes)
+
+JSON Structure Example:
+```json
+{
+    "output_name": "TopicExplanationVideo",
+    "scenes": [
+        {
+            "type": "title",
+            "main_text": "Topic Title",
+            "subtitle": "Detailed Explanation",
+            "voiceover": "Introductory narrative",
+            "duration": 5,
+        },
+        {
+            "type": "overview",
+            "text": "High-level concept explanation (In Pango Markup)",
+            "voiceover": "Narrative overview",
+            "creation_time": 10,
+            "duration": 4,
+            "subtitle": "Optional additional context (This is only text not Pango Markup)"
+        },
+                  {
+            "type": "multi_image_text",
+            "title": "string",
+            "text": "string  (In Pango Markup)",
+            "voiceover": "string (good depth explaination with rules of thumb and numbers statistics , real world examples etc)",
+            "wikipedia_topics": ["string"] (used to search for images which can be found and represent the video topic and explain the concept well not too specific),
+            "num_images": "number",
+            "image_width": "optional_number",
+            "layout": "horizontal|vertical",
+            "duration": "number"
+          },
+        {
+            "type": "code",
+            "title": "Implementation Details",
+            "code": "# Demonstration code\\n...",
+            "intro": {
+                "text": "Code context",
+                "voiceover": "Code introduction narration"
+            },
+            "sections": [
+                {
+                    "title": "Key Code Section",
+                    "highlight_start": 1,
+                    "highlight_end": 3,
+                    "voiceover": "Detailed code explanation",
+                    "duration": 3
+                }
+            ],
+            "conclusion": {
+                "text": "Code summary",
+                "voiceover": "Concluding code insights"
+            }
+        },
+        {
+            "type": "sequence",
+            "title": "System Interaction Flow",
+            "background": "optional_background.png",
+            "actors": ["Actor1", "Actor2"],
+            "interactions": [
+                {
+                    "from": "Actor1",
+                    "to": "Actor2",
+                    "type": "message",
+                    "message": "Interaction description",
+                    "voiceover": "Interaction explanation"
+                }
+            ]
+        },
+                {
+            "type": "image_text",
+            "title": "string",
+            "text": "string  (In Pango Markup)",
+            "voiceover": "string",
+            "wikipedia_topic": "string (passed to api to search for images which can be found and represent the video topic and explain the concept well not too specific)",
+            "num_images": 2,
+            "duration": 6
+        },
+          {
+            "type": "triangle",
+            "title": "optional_string",
+            "voiceover": "string (good depth explaination of the triangle with extra knowledge like rules of thumb and numbers statistics , real world examples etc)",
+            "top_text": "string and can be Latex or text only not pango markup",
+            "left_text": "string and can be Latex or text only not pango markup",
+            "right_text": "string and can be Latex or text only not pango markup",
+            "top_to_left": "optional_string and can be Latex or text only not pango markup",
+            "top_to_right": "optional_string and can be Latex or text only not pango markup",
+            "left_to_right": "optional_string and can be Latex or text only not pango markup",
+            "right_to_left": "optional_string and can be Latex or text only not pango markup",
+            "left_to_top": "optional_string and can be Latex or text only not pango markup",
+            "right_to_top": "optional_string and can be Latex or text only not pango markup",
+            "duration": "number"
+          },
+             {
+        "type": "timeline",
+        "title": "string",
+        "events": [
+          {
+            "year": year (number for example 2000),
+            "text": "string (plain text not pango markup)",
+            "narration": "string.",
+            "image_description": "string ( for lookup image in wikimedia api)"
+          },
+          {
+            "year": year (number for example 2008),
+            "text": "string (plain text not pango markup)",
+            "narration": "string.",
+            "image_description": "string ( for lookup image in wikimedia api)"
+          },
+          //More depending on the topic and what you thing is needed
+        ],
+      },
+          {
+            "type": "data_processing_flow",
+            "blocks": [
+              {
+                "type": "input1|input2|processor|output",
+                "text": "string",
+                "voiceover": "string (good depth explaination with rules of thumb and numbers statistics , real world examples etc)",
+                "color": "green|red|blue|purple"
+              }
+            ],
+            "narration": {
+              "conclusion": "string"
+            }
+          }
+    ]
+}
+```
+    Instructions:
+    Always include a title scene to introduce the topic.
+    Always make sure all voiceovers explain more than the text and give deeper explanations to complement the text and concepts, adding real-world examples, analogies, statistics, rules of thumb, etc.
+    Only write pango markup where there is a a mark that its pango markup in the above josn example.
+    Include an overview scene only if it adds value to the explanation (e.g., for high-level concepts).
+    Include one or more code scenes only of asked or explanation calls for it to demonstrate practical usage. Ensure all code snippets adhere to the following formatting rules:use 4 spaces for indentation (no tabs),inline comments must have two spaces after the code before the comment starts,multi-line comments (if applicable) should be indented at the same level as the surrounding code,each line of code should not exceed 80 characters for readability.
+    Include a sequence scene only if the topic involves system workflows, interactions, or processes. Otherwise, omit this scene type.
+    Include an image+text scene only if the topic benefits from visual aids. Use Wikipedia topics to search for images.
+    Include a multi-image+text scene only if the topic requires multiple images. Use Wikipedia topics to search for images.
+    Include a triangle diagram scene only if the topic involves relationships between three elements. Use clear labels and voiceovers and can be Latex or text only not pango markup.
+    Include a data processing flow scene only if the topic involves data processing. Use color-coded blocks and voiceovers.
+    Include a timeline scene only if the topic has historical significance. Use years and events with voiceovers.
+    Include a connection scene only if the topic involves connections between elements. Use clear labels and voiceovers.
+    Replace placeholders with appropriate values for {topic}. Ensure the JSON is valid and responds only with the JSON, no additional text.
+  """
+    )

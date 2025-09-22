@@ -1,0 +1,152 @@
+{
+    "background_music": "",
+    "scenes": [
+      {
+        "type": "title",
+        "main_text": "Welcome to the Video",
+        "subtitle": "An Introduction to Code and Visuals",
+        "voiceover": "Welcome to this video. Let's explore the world of code and visuals.",
+        "duration": 3
+      },
+      {
+        "type": "overview",
+        "text": "This video will guide you through various concepts with engaging visuals.",
+        "subtitle": "Overview of the Video",
+        "voiceover": "In this video, we will cover various concepts with engaging visuals.",
+        "duration": 5,
+        "subtitle_duration": 2
+      },
+      {
+        "type": "image_text",
+        "title": "Understanding Python",
+        "text": "Python is a versatile programming language used for web development, data analysis, and more.",
+        "wikipedia_topic": "Python (programming language)",
+        "num_images": 2,
+        "voiceover": "Python is a versatile programming language used for web development, data analysis, and more.",
+        "duration": 6
+      },
+      {
+        "type": "data_processing_flow",
+        "title": {
+          "main": "Python Data Processing Flow",
+          "subtitle": "How Python Handles Data",
+          "narration": "In this video, we will explore how Python handles data processing."
+        },
+        "blocks": [
+          {
+            "type": "input1",
+            "text": "Raw Data (CSV)",
+            "color": "green",
+            "voiceover": "The first input is raw data in CSV format."
+          },
+          {
+            "type": "input2",
+            "text": "Configuration File (JSON)",
+            "color": "red",
+            "voiceover": "The second input is a configuration file in JSON format."
+          },
+          {
+            "type": "processor",
+            "text": "Python Script",
+            "color": "blue",
+            "voiceover": "The Python script processes the raw data using the configuration file."
+          },
+          {
+            "type": "output",
+            "text": "Processed Data (Pandas DataFrame)",
+            "color": "purple",
+            "voiceover": "The output is the processed data in the form of a Pandas DataFrame."
+          }
+        ],
+        "narration": {
+          "conclusion": "This concludes the Python data processing flow."
+        }
+      },
+      {
+        "type": "sequence",
+        "title": "How a Web Request Works",
+        "actors": ["Client", "Server", "Database"],
+        "interactions": [
+          {
+            "from": "Client",
+            "to": "Server",
+            "type": "message",
+            "message": "Send HTTP Request",
+            "voiceover": "The client sends an HTTP request to the server."
+          },
+          {
+            "from": "Server",
+            "to": "Database",
+            "type": "message",
+            "message": "Query Database",
+            "voiceover": "The server queries the database for the requested data."
+          },
+          {
+            "from": "Database",
+            "to": "Server",
+            "type": "message",
+            "message": "Return Data",
+            "voiceover": "The database returns the requested data to the server."
+          },
+          {
+            "from": "Server",
+            "to": "Client",
+            "type": "message",
+            "message": "Send Response",
+            "voiceover": "The server sends the response back to the client."
+          }
+        ],
+        "voiceover": "This sequence diagram illustrates how a web request works.",
+        "duration": 8
+      },
+      {
+        "type": "multi_image_text",
+        "title": "Applications of Python",
+        "text": "Python is widely used in web development, data science, artificial intelligence, and more.",
+        "wikipedia_topics": ["Applications of Python", "Python programming applications", "Python use cases"],
+        "num_images": 3,
+        "layout": "horizontal",
+        "voiceover": "Python is widely used in web development, data science, artificial intelligence, and more.",
+        "duration": 7
+      },
+      {
+        "type": "triangle",
+        "title": "Python Ecosystem",
+        "top_text": "Python",
+        "left_text": "Libraries",
+        "right_text": "Frameworks",
+        "top_to_left": "Supports Libraries",
+        "top_to_right": "Supports Frameworks",
+        "left_to_right": "Interacts with Frameworks",
+        "voiceover": "The Python ecosystem includes libraries and frameworks that interact seamlessly.",
+        "duration": 5
+      },
+      {
+        "type": "timeline",
+        "title": "History of Python",
+        "events": [
+          {
+            "year": 1991,
+            "text": "Python was created by Guido van Rossum.",
+            "narration": "In 1991, Python was created by Guido van Rossum.",
+            "image_description": "Guido van Rossum"
+          },
+          {
+            "year": 2000,
+            "text": "Python 2.0 was released with new features.",
+            "narration": "In 2000, Python 2.0 was released with new features.",
+            "image_description": "Python logo"
+          },
+          {
+            "year": 2008,
+            "text": "Python 3.0 was introduced with major updates.",
+            "narration": "In 2008, Python 3.0 was introduced with major updates.",
+            "image_description": "Python 3"
+          }
+        ],
+        "conclusion": {
+          "narration": "Python continues to evolve and remains a popular programming language."
+        }
+      }
+    ]
+  }

@@ -1,0 +1,53 @@
+{
+    "background_music": "",
+    "background_image": "/Users/mac/code-video-generator/examples/resources/blackboard.jpg",
+    "title": {
+        "text": "HTTP Protocol Explained: What You Need to Know (2024)",
+        "voiceover": "Welcome to our deep dive into the HTTP Protocol, the foundation of web communication. Whether you're a beginner or looking to refresh your knowledge, this video will break down HTTP in a simple and engaging way.",
+        "subtitle": "Understanding Web Communication"
+    },
+    "overview": {
+        "text": "Think of HTTP like a postal service for the web:\n- Your browser is the sender,\n- The server is the receiver,\n- And the HTTP protocol is the set of rules that ensures your message (or request) is delivered correctly.\n\nIn simple terms:\nHTTP = Request (What you want) + Response (What you get)\nThis formula is the backbone of how the web works.",
+        "voiceover": "To understand HTTP, let’s use the analogy of a postal service. Your browser is like a sender writing a letter (the request), and the server is the receiver who sends back a response. The HTTP protocol is the set of rules that ensures this communication happens smoothly.\n\nIn simple terms, HTTP can be broken down into a formula:\nHTTP = Request (What you want) + Response (What you get)\nThis is the foundation of how data travels across the web."
+    },
+    "sequence_diagram": {
+        "title": "HTTP Request and Response Process",
+        "actors": ["User (Browser)", "Web Server", "Application"],
+        "interactions": [
+            {
+                "type": "message",
+                "from": "User (Browser)",
+                "to": "Web Server",
+                "message": "Send HTTP Request (e.g., GET /home)",
+                "voiceover": "The process begins when your browser sends an HTTP request to the web server, asking for a specific resource, like a webpage."
+            },
+            {
+                "type": "message",
+                "from": "Web Server",
+                "to": "Application",
+                "message": "Process Request",
+                "voiceover": "The web server receives the request and forwards it to the application to process."
+            },
+            {
+                "type": "note",
+                "from": "Application",
+                "message": "Generate Response (e.g., HTML, JSON)",
+                "voiceover": "The application generates the appropriate response, such as an HTML page or JSON data."
+            },
+            {
+                "type": "message",
+                "from": "Application",
+                "to": "Web Server",
+                "message": "Send HTTP Response",
+                "voiceover": "The application sends the response back to the web server."
+            },
+            {
+                "type": "message",
+                "from": "Web Server",
+                "to": "User (Browser)",
+                "message": "Deliver HTTP Response",
+                "voiceover": "Finally, the web server delivers the response to your browser, which displays the requested content. Curious about how HTTPS adds a layer of security to this process? Don’t forget to watch our video on HTTPS Explained!"
+            }
+        ]
+    }
+}

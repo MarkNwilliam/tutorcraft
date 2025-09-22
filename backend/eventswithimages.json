@@ -1,0 +1,44 @@
+{
+    "title": {
+      "main": "History of Computing",
+      "subtitle": "Major Milestones in Computer Development",
+      "narration": "Welcome to this timeline of major milestones in the history of computing. We will explore key inventions and breakthroughs that shaped modern technology."
+    },
+    "events": [
+      {
+        "year": 1941,
+        "text": "Z3 computer created by Konrad Zuse in Germany, first programmable computer.",
+        "narration": "In 1941, Konrad Zuse completed the Z3 in Germany. It was the world's first programmable, fully automatic computing machine, marking a significant milestone in computer history.",
+        "image_description": "Konrad Zuse Z3 Computer"
+      },
+      {
+        "year": 1946,
+        "text": "ENIAC unveiled at University of Pennsylvania, first general-purpose electronic computer.",
+        "narration": "In 1946, the Electronic Numerical Integrator and Computer, or ENIAC, was unveiled at the University of Pennsylvania. It was the first general-purpose electronic digital computer and weighed nearly 30 tons.",
+        "image_description": "ENIAC Computer"
+      },
+      {
+        "year": 1969,
+        "text": "ARPANET established, the precursor to the modern Internet.",
+        "narration": "In 1969, ARPANET was established as a network connecting four major universities. This network would eventually evolve into what we now know as the Internet.",
+        "image_description": "ARPANET Network Map"
+      },
+      {
+        "year": 1976,
+        "text": "Apple Computer founded by Steve Jobs and Steve Wozniak.",
+        "narration": "In 1976, Steve Jobs and Steve Wozniak founded Apple Computer, beginning with the Apple I personal computer kit. This marked the start of what would become one of the world's most valuable technology companies.",
+        "image_description": "Apple I Computer"
+      },
+      {
+        "year": 1989,
+        "text": "Tim Berners-Lee invents the World Wide Web at CERN.",
+        "narration": "In 1989, Tim Berners-Lee invented the World Wide Web while working at CERN. His invention revolutionized how information is shared and accessed globally.",
+        "image_description": "Tim Berners-Lee WWW"
+      }
+    ],
+    "conclusion": {
+      "title": "Computing Evolution",
+      "format": "From {start_year} to {end_year}, computing has transformed from experimental machines to essential technology that powers our daily lives.",
+      "narration": "From {start_year} to {end_year}, we've witnessed an incredible evolution of computing technology. What began as experimental machines has become essential technology that powers virtually every aspect of our modern lives. This transformation continues to accelerate, shaping our future in ways we're only beginning to understand."
+    }
+  }

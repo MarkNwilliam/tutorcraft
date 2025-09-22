@@ -1,0 +1,279 @@
+nohup: ignoring input
+/home/yeeplatform/docvideomaker/venv/lib/python3.12/site-packages/manim_voiceover/__init__.py:4: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+{
+  "output_name": "Indirect_CP_Violation",
+  "scenes": [
+    {
+      "type": "triangle",
+      "title": "CP Violation in Kaon Decays",
+      "voiceover": "The relationship between $K^0$, $\\bar{K}^0$, and the CP eigenstates $K_S$ and $K_L$ is central to understanding indirect CP violation. The mixing matrix introduces a small asymmetry, quantified by the parameter $\\epsilon$, which measures the degree of CP violation.",
+      "top_text": "$K^0$",
+      "left_text": "$K_S$",
+      "right_text": "$K_L$",
+      "top_to_left": "Mixing with CP conservation",
+      "top_to_right": "Mixing with CP violation ($\\epsilon$)",
+      "left_to_right": "Decay asymmetry",
+      "right_to_left": "Decay asymmetry",
+      "duration": 7
+    }
+  ]
+}
+🎮 GPU Support Check:
+   XVFB Available: True
+   OpenGL Capable: True
+
+🎬 GPU-ACCELERATED VIDEO GENERATOR
+CPU Cores: 4
+Resolution: 480p @ 30fps
+Renderer: OpenGL (GPU)
+Memory Blocking: DISABLED
+Media Dir: /home/yeeplatform/docvideomaker/media
+✅ Directories ready
+💾 Memory: 26.2GB available
+🖥️  CPU: 0.0% usage
+🎮 GPU: Available
+🚀 Server starting at http://0.0.0.0:3000
+🎯 Mode: GPU-accelerated OpenGL
+ * Serving Flask app 'test_server'
+ * Debug mode: off
+[09/07/25 22:39:22] INFO     [31m[1mWARNING: This is a           _internal.py:97
+                             development server. Do not use it                  
+                             in a production deployment. Use a                  
+                             production WSGI server instead.[0m                 
+                              * Running on all addresses                        
+                             (0.0.0.0)                                          
+                              * Running on http://127.0.0.1:3000                
+                              * Running on http://10.4.0.4:3000                 
+                    INFO     [33mPress CTRL+C to quit[0m         _internal.py:97
+📹 Serving GPU video: video_1757283835.mp4
+[09/07/25 22:39:29] INFO     41.210.145.61 - - [07/Sep/2025      _internal.py:97
+                             22:39:29] "[33mHEAD                                
+                             /media/videos/480p15/video_17572838                
+                             35.mp4 HTTP/1.1[0m" 404 -                          
+
+🎬 GPU VIDEO REQUEST
+Topic: Direct Port Test
+Output: video_1757284775
+🧹 GPU-aware memory cleanup completed
+
+===== GPU VIDEO GENERATION =====
+🧹 GPU-aware memory cleanup completed
+Topic: Direct Port Test
+Output: video_1757284775
+Memory: 26.2GB available
+CPU: 0.0%
+GPU: Available
+🎮 Using OpenGL GPU renderer
+✅ Manim config set to GPU mode
+
+🎬 Generating video JSON...
+
+Generating video JSON for topic: Direct Port Test
+Sending request to Azure OpenAI...
+[09/07/25 22:39:50] INFO     HTTP Request: POST                  _client.py:1025
+                             https://nkugw-m8lhg8dl-swedencentra                
+                             l.openai.azure.com/openai/deploymen                
+                             ts/gpt-4-32k/chat/completions?api-v                
+                             ersion=2024-05-01-preview "HTTP/1.1                
+                             200 OK"                                            
+Response received from Azure OpenAI
+
+--- RAW RESPONSE FROM AI ---
+```json
+{
+    "output_name": "DirectPortTestExplanation",
+    "scenes": [
+        {
+            "type": "title",
+            "main_text": "<b>Direct Port Test</b>",
+            "subtitle": "<i>Efficient Hardware Testing Through Direct Port Access</i>",
+            "voiceover": "Welcome to this video on Direct Port Test, a method used for efficient hardware testing by directly accessing microcontroller ports. In this video, we will explore its principles, implementation, and practical application
+...
+---------------------------
+
+Extracted JSON length: 7658
+First 200 chars: {
+    "output_name": "DirectPortTestExplanation",
+    "scenes": [
+        {
+            "type": "title",
+            "main_text": "<b>Direct Port Test</b>",
+            "subtitle": "<i>Efficient Hardw
+Original JSON snippet: {
+    "output_name": "DirectPortTestExplanation",
+    "scenes": [
+        {
+            "type": "title",
+            "main_text": "<b>Direct Port Test</b>",
+            "subtitle": "<i>Efficient Hardw...
+Fixed JSON snippet: {
+    "output_name": "DirectPortTestExplanation",
+    "scenes": [
+        {
+            "type": "title",
+            "main_text": "<b>Direct Port Test</b>",
+            "subtitle": "<i>Efficient Hardw...
+
+--- CLEANED JSON CONTENT ---
+{
+  "output_name": "DirectPortTestExplanation",
+  "scenes": [
+    {
+      "type": "title",
+      "main_text": "<b>Direct Port Test</b>",
+      "subtitle": "<i>Efficient Hardware Testing Through Direct Port Access</i>",
+      "voiceover": "Welcome to this video on Direct Port Test, a method used for efficient hardware testing by directly accessing microcontroller ports. In this video, we will explore its principles, implementation, and practical applications.",
+      "duration": 6
+    },
+    {
+      "type": "overview",
+      "text": "<b>Direct Port Test</b> is a method used in embedded systems to test hardware functionality by directly manipulating and reading microcontroller ports. This approach bypasses higher-level abstractions, enabling faster and more precise testing. <span foreground='#34A853'>Advantages</span> include reduced latency, improved debugging, and better control over hardware states.",
+      "voiceover": "Direct Port Test is a critical technique in embedded systems, allowing engineers to directly interact with microcontroller ports for testing purposes. By bypassing higher-level software layers, this method ensures faster and more accurate results. It is particularly useful in scenarios where precise timing and control are essential, such as in real-time systems or hardware debugging.",
+      "creation_time": 8,
+      "duration": 5,
+      "subtitle": "Understanding the basics of Direct Port Test"
+    },
+    {
+      "type": "code",
+      "title": "Direct Port Test Implementation",
+      "code": "// Example: Toggling an LED using Direct Port Access\n#include <avr/io.h>  // Include microcontroller-specific header\n\nint main(void) {\n    DDRB |= (1 << PB0);  // Set PB0 as output\n\n    while (1) {\n        PORTB ^= (1 << PB0);  // Toggle PB0\n        for (volatile uint32_t i = 0; i < 100000; i++) {\n            // Simple delay loop\n        }\n    }\n    return 0;\n}",
+      "intro": {
+        "text": "This code demonstrates how to toggle an LED connected to a microcontroller pin using direct port access.",
+        "voiceover": "In this example, we use direct port manipulation to toggle an LED connected to pin PB0 of an AVR microcontroller. By directly setting the data direction register and toggling the port register, we achieve precise control over the hardware."
+      },
+      "sections": [
+        {
+          "title": "Setting Pin Direction",
+          "highlight_start": 2,
+          "highlight_end": 2,
+          "voiceover": "Here, we configure PB0 as an output pin by setting the corresponding bit in the DDRB register. This step is crucial for enabling the pin to drive external components like LEDs.",
+          "duration": 3
+        },
+        {
+          "title": "Toggling the Pin",
+          "highlight_start": 5,
+          "highlight_end": 5,
+          "voiceover": "In this line, we toggle the state of PB0 by using the XOR operation on the PORTB register. This directly changes the voltage level on the pin, causing the LED to turn on and off.",
+          "duration": 3
+        }
+      ],
+      "conclusion": {
+        "text": "This example highlights the simplicity and efficiency of direct port manipulation for hardware testing.",
+        "voiceover": "By using direct port access, we can achieve low-latency and precise control over microcontroller pins, making it an invaluable tool for hardware testing and debugging."
+      }
+    },
+    {
+      "type": "sequence",
+      "title": "Direct Port Test Workflow",
+      "actors": [
+        "Tester",
+        "Microcontroller"
+      ],
+      "interactions": [
+        {
+          "from": "Tester",
+          "to": "Microcontroller",
+          "type": "message",
+          "message": "Send command to set pin state",
+          "voiceover": "The tester sends a command to the microcontroller to set the state of a specific pin. This is done by directly writing to the port register."
+        },
+        {
+          "from": "Microcontroller",
+          "to": "Tester",
+          "type": "message",
+          "message": "Return pin state",
+          "voiceover": "The microcontroller reads the state of the pin and sends the result back to the tester. This allows verification of the hardware's response."
+        }
+      ]
+    },
+    {
+      "type": "image_text",
+      "title": "Direct Port Test Applications",
+      "text": "<b>Applications of Direct Port Test</b> include:\n<span foreground='#AAAAAA'>\u2022</span> Hardware debugging\n<span foreground='#AAAAAA'>\u2022</span> Real-time system testing\n<span foreground='#AAAAAA'>\u2022</span> Peripheral validation",
+      "voiceover": "Direct Port Test is widely used in embedded systems for tasks such as hardware debugging, real-time system testing, and validating peripheral functionality. By providing direct access to microcontroller ports, it ensures precise and reliable testing.",
+      "wikipedia_topic": "Embedded systems",
+      "num_images": 2,
+      "duration": 6
+    },
+    {
+      "type": "triangle",
+      "title": "Key Elements of Direct Port Test",
+      "voiceover": "The Direct Port Test involves three key elements: the microcontroller, the test environment, and the hardware under test. These elements interact to ensure accurate and efficient testing.",
+      "top_text": "Microcontroller",
+      "left_text": "Test Environment",
+      "right_text": "Hardware Under Test",
+      "top_to_left": "Configures and controls",
+      "top_to_right": "Interfaces directly",
+      "left_to_right": "Validates functionality",
+      "duration": 5
+    },
+    {
+      "type": "data_processing_flow",
+      "blocks": [
+        {
+          "type": "input1",
+          "text": "Test Command",
+          "voiceover": "The process begins with a test command, specifying the desired operation or state for the microcontroller pin.",
+          "color": "blue"
+        },
+        {
+          "type": "input2",
+          "text": "Hardware State",
+          "voiceover": "The current state of the hardware is also considered, ensuring that the test is conducted under realistic conditions.",
+          "color": "green"
+        },
+        {
+          "type": "processor",
+          "text": "Direct Port Access",
+          "voiceover": "The microcontroller processes the test command by directly accessing the port registers, bypassing higher-level abstractions.",
+          "color": "purple"
+        },
+        {
+          "type": "output",
+          "text": "Test Results",
+          "voiceover": "Finally, the results of the test are output, providing insights into the hardware's behavior and performance.",
+          "color": "red"
+        }
+      ],
+      "narration": {
+        "conclusion": "This flow illustrates the efficiency and precision of Direct Port Test, making it an essential tool for embedded system developers."
+      }
+    }
+  ]
+}
+---------------------------
+
+JSON ready in 14.6s
+✅ JSON configured for video_1757284775
+
+🎥 Generating GPU video...
+🎮 Running GPU-accelerated Manim: xvfb-run -a manim --renderer=opengl -ql temp_scene.py TempScene
+⚠️  GPU rendering failed: 
+🔄 Falling back to CPU rendering...
+🔄 Using CPU fallback rendering...
+Generating video with output_name: video_1757284775
+Current config output_file: 
+Using scene name: video_1757284775
+DynamicScene class name: video_1757284775
+CPU rendering error: 'OpenGLCamera' object has no attribute 'frame_height'
+Video generation completed in 1.4s
+🔍 Searching for video...
+⚠️  Video not found, but generation may have succeeded
+
+✅ REQUEST COMPLETED
+URL: http://20.55.73.40:3000/media/videos/480p15/video_1757284775.mp4
+Time: 31.2s
+[09/07/25 22:40:06] INFO     41.210.145.61 - - [07/Sep/2025      _internal.py:97
+                             22:40:06] "POST /generate_video                    
+                             HTTP/1.1" 200 -                                    
+📹 Serving GPU video: video_1757284775.mp4
+[09/07/25 22:40:29] INFO     41.210.145.61 - - [07/Sep/2025      _internal.py:97
+                             22:40:29] "[33mHEAD                                
+                             /media/videos/480p15/video_17572847                
+                             75.mp4 HTTP/1.1[0m" 404 -                          
+📹 Serving GPU video: video_1757284775.mp4
+[09/07/25 22:45:41] INFO     127.0.0.1 - - [07/Sep/2025          _internal.py:97
+                             22:45:41] "[33mHEAD                                
+                             /media/videos/480p15/video_17572847                
+                             75.mp4 HTTP/1.1[0m" 404 -                          
