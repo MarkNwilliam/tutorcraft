@@ -2,11 +2,21 @@
 
 AI-Powered Learning Companion - Transform any question into an engaging video tutorial instantly!
 
-[![Download on Google Play](https://play.google.com/store/apps/details?id=com.yeefm.tutorcraft)
+[![Download on Google Play](https://img.shields.io/badge/Google_Play-414141?style=for-the-badge&logo=google-play&logoColor=white)](https://play.google.com/store/apps/details?id=com.yeetechnologies.tutorcraft)
+[![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white)](https://flutter.dev)
+[![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)](https://firebase.google.com)
+
+![Screenshot_20250915-234759](https://github.com/user-attachments/assets/e9803e51-f406-45f4-81e8-0d87a9de94e3)
+![Screenshot_20250915-234754](https://github.com/user-attachments/assets/7814878c-654b-47cb-b4ff-e812489229e2)
+![Screenshot_20250915-234748](https://github.com/user-attachments/assets/3859da64-c989-4a80-9da2-e6532df5ae39)
+![Screenshot_20250915-234742](https://github.com/user-attachments/assets/f5091425-8a26-4fba-b80e-0baf846c08fe)
+![Screenshot_20250915-234735](https://github.com/user-attachments/assets/a824c3c9-cba5-4dd3-824e-6a26839560d6)
+![Screenshot_20250915-234706](https://github.com/user-attachments/assets/e864bc02-5790-4899-a41b-986411dcb2c4)
+![Screenshot_20250915-234645](https://github.com/user-attachments/assets/4f991052-4294-45bf-baa9-2064b46b6871)
 
 ## 📱 Download
 
-**Google Play Store**: [Download Tutorcraft](https://play.google.com/store/apps/details?id=com.yeetechnologies.tutorcraft)
+**Google Play Store**: [Download Tutorcraft](https://play.google.com/store/apps/details?id=com.yeefm.tutorcraft)
 
 - **Version**: 1.0.0
 - **Release Date**: September 17, 2025  
