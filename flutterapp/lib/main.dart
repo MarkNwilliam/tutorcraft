@@ -13,6 +13,7 @@ import 'providers/auth_provider.dart';
 import 'providers/revenuecat_provider.dart';
 import 'theme/app_theme.dart';
 import 'package:purchases_flutter/purchases_flutter.dart';
+import 'package:onesignal_flutter/onesignal_flutter.dart';
 
 void main() async {
   // Ensure that widget binding is initialized
@@ -26,16 +27,70 @@ void main() async {
   // Initialize RevenueCat - moved to provider for better state management
   await Purchases.configure(
     PurchasesConfiguration(
-      'goog_FfaRxAOFqolncdeWgvmtLOGvFmR' // Your Public API Key from the dashboard
+     
     )
- 
   );
+
+  // Initialize OneSignal for push notifications
+  await _initializeOneSignal();
   
   runApp(
     const ProviderScope(
       child: TutorCraftApp(),
     ),
   );
+}
+
+// Initialize OneSignal with your App ID
+Future<void> _initializeOneSignal() async {
+  // Enable verbose logging for debugging (remove in production)
+  OneSignal.Debug.setLogLevel(OSLogLevel.verbose);
+  
+  // Initialize with your OneSignal App ID
+  OneSignal.initialize("");
+  
+  // Request notification permission (true = shows native permission dialog)
+  OneSignal.Notifications.requestPermission(true);
+  
+    // Enable IN-APP MESSAGES (add this)
+  OneSignal.InAppMessages.paused(false);
+
+  // Set up notification click handler
+  OneSignal.Notifications.addClickListener((event) {
+    _handleNotificationClick(event);
+  });
+
+  // Set up foreground notification handler
+  OneSignal.Notifications.addForegroundWillDisplayListener((event) {
+    // You can modify the notification before it displays
+    print("Notification received in foreground: ${event.notification}");
+  });
+
+    // Add in-app message click handler (optional)
+  OneSignal.InAppMessages.addClickListener((event) {
+    print("In-app message clicked: ${event.result}");
+  });
+}
+
+// Handle notification clicks for deep linking
+void _handleNotificationClick(OSNotificationClickEvent event) {
+  print("Notification clicked: ${event.notification}");
+  
+  // Handle deep linking based on notification data
+  if (event.notification.additionalData != null) {
+    final data = event.notification.additionalData!;
+    
+    // Example: Navigate to specific tutorial
+    if (data['tutorial_id'] != null) {
+      print("Navigate to tutorial: ${data['tutorial_id']}");
+      // You can use a navigation service or provider to handle this
+    }
+    
+    // Example: Navigate to specific screen
+    if (data['screen'] != null) {
+      print("Navigate to screen: ${data['screen']}");
+    }
+  }
 }
 
 class TutorCraftApp extends StatelessWidget {
@@ -268,5 +323,33 @@ class AuthLoadingScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+// Utility class for sending notifications from anywhere in your app
+class NotificationService {
+  // Send tag-based notifications (user preferences, learning level, etc.)
+  static Future<void> setUserTags(Map<String, dynamic> tags) async {
+    try {
+      await OneSignal.User.addTags(tags);
+      print("User tags set: $tags");
+    } catch (e) {
+      print("Error setting user tags: $e");
+    }
+  }
+
+  // Example: Set user learning level
+  static Future<void> setLearningLevel(String level) async {
+    await setUserTags({'learning_level': level});
+  }
+
+  // Example: Set user subscription status
+  static Future<void> setSubscriptionStatus(String status) async {
+    await setUserTags({'subscription_status': status});
+  }
+
+  // Example: Track tutorial completion
+  static Future<void> trackTutorialCompletion(String tutorialId) async {
+    await setUserTags({'completed_$tutorialId': 'true'});
   }
 }
